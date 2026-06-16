@@ -104,6 +104,12 @@ namespace WebAPI.Controllers
             return NoContent();
         }
 
+        [HttpGet("error")]
+        public IActionResult Error()
+        {
+            throw new Exception("Cadena de conexión: Server=localhost;Database=Prueba;User=sa;Password=123");
+        }
+
 
 
     }
