@@ -23,6 +23,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
       
+    - name: Check vulnerabilities
+      run: dotnet list package --vulnerable --include-transitive
+      
     - name: Build
       run: dotnet build --no-restore
       
