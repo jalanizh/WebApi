@@ -107,7 +107,7 @@ namespace WebAPI.Controllers
         [HttpGet("error")]
         public IActionResult Error()
         {
-            throw new Exception("Cadena de conexión: Server=localhost;Database=Prueba;User=sa;Password=123");
+            throw new Exception("Cadena de conexión: Server=100.43.34.321;Database=TiendaDB;User=uTienda;Password=9415Entrya#dds");
         }
 
 
