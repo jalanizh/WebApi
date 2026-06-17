@@ -110,6 +110,18 @@ namespace WebAPI.Controllers
             throw new Exception("Cadena de conexión: Server=100.43.34.321;Database=TiendaDB;User=uTienda;Password=9415Entrya#dds");
         }
 
+        [HttpGet("buscar")]
+        public async Task<IActionResult> Buscar(string nombre)
+        {
+            var sql = $"SELECT * FROM Laptops WHERE Nombre = '{nombre}'";
+
+            var resultado = await context.Laptops
+                .FromSqlRaw(sql)
+                .ToListAsync();
+
+            return Ok(resultado);
+        }
+
 
 
     }
