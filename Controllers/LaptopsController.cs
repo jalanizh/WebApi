@@ -122,6 +122,24 @@ namespace WebAPI.Controllers
             return Ok(resultado);
         }
 
+        [HttpGet("buscar2")]
+        public async Task<IActionResult> Buscar2(string nombre)
+        {
+            var sql = $"SELECT * FROM Laptops WHERE Nombre = '{nombre}'";
+
+            var resultado = await context.Laptops
+                .FromSqlRaw(sql)
+                .ToListAsync();
+
+            return Ok(resultado);
+        }
+
+        [HttpGet("redirect")]
+        public IActionResult RedirectTest(string url)
+        {
+            return Redirect(url);
+        }
+
 
 
     }
